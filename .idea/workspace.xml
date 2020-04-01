@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="36fdefb5-ed85-4da1-a617-87043732a3aa" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZnkwxgeGcE3DuB4WWy0tjfNUu0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="E:/Game/angry Bird/flappyBird.js" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36fdefb5-ed85-4da1-a617-87043732a3aa" name="Default Changelist" comment="" />
+      <created>1585482487334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585482487334</updated>
+      <workItem from="1585482488932" duration="30034000" />
+      <workItem from="1585531532254" duration="5354000" />
+      <workItem from="1585537428972" duration="2924000" />
+      <workItem from="1585540489333" duration="76000" />
+      <workItem from="1585540566361" duration="5236000" />
+      <workItem from="1585568081513" duration="200000" />
+      <workItem from="1585626716406" duration="33211000" />
+      <workItem from="1585665376850" duration="139000" />
+      <workItem from="1585665548250" duration="284000" />
+      <workItem from="1585670123095" duration="6927000" />
+      <workItem from="1585705544893" duration="18559000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="143" y="140" key="FileChooserDialogImpl" timestamp="1585670771007">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="143" y="140" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585670771007" />
+    <state x="461" y="290" width="670" height="676" key="search.everywhere.popup" timestamp="1585508585517">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="461" y="290" width="670" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1585508585517" />
+  </component>
+</project>
