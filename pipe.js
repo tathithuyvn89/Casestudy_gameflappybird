@@ -32,19 +32,30 @@ var Pipe = function (game) {
         if (this.game.gameOver){
             return;
         }
-       this.x-=2;
-        
-        if (this.x===-52){
+        //lever 1
+        if (self.score<2){
+         this.x-=2;
+        if (this.x===-54){
             this.x=300;
             this.y=Math.floor(Math.random()*242)-242;
         }
+        }
+        //lever 2
+        if (self.score>=2){
+            this.x-=3;
+            if (this.x===-54){
+                this.x=300;
+                this.y=Math.floor(Math.random()*242)-242;
+            }
+        }
+
     }
     this.draw = function () {
         if (self.pipe1loaded===false ||self.pipe1loaded===false){
             return;
         }
         self.game.context.drawImage(self.pipe1,this.x,this.y);
-        self.game.context.drawImage(self.pipe2,this.x,this.y+242+120);// 242 la chiều cao của ống trên, 200 là khoảng trống
+        self.game.context.drawImage(self.pipe2,this.x,this.y+242+100);// 242 la chiều cao của ống trên, 200 là khoảng trống
     }
     this.hitAudio=function () {
         if (game.gameOver===false){
@@ -55,7 +66,7 @@ var Pipe = function (game) {
     }
     this.hitPipe=function () {
         if ((self.game.bird.x+50>=this.x&&self.game.bird.x<=this.x+52)&&
-            (self.game.bird.y<=242+this.y||self.game.bird.y+40>this.y+120+242)){
+            (self.game.bird.y<=242+this.y||self.game.bird.y+40>this.y+100+242)){
             self.hitAudio();
             self.game.gameOver=true;
             return true;
@@ -70,7 +81,7 @@ var Pipe = function (game) {
     }
    this. makePoint=function () {
         if (self.pipe1loaded&&self.pipe2loaded){
-        if (self.x===50){
+        if (self.x===60){
             self.score++;
           this.pointAudio();
         }
