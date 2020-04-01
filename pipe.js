@@ -44,7 +44,7 @@ var Pipe = function (game) {
             return;
         }
         self.game.context.drawImage(self.pipe1,this.x,this.y);
-        self.game.context.drawImage(self.pipe2,this.x,this.y+242+150);// 242 la chiều cao của ống trên, 200 là khoảng trống
+        self.game.context.drawImage(self.pipe2,this.x,this.y+242+120);// 242 la chiều cao của ống trên, 200 là khoảng trống
     }
     this.hitAudio=function () {
         if (game.gameOver===false){
@@ -55,7 +55,7 @@ var Pipe = function (game) {
     }
     this.hitPipe=function () {
         if ((self.game.bird.x+50>=this.x&&self.game.bird.x<=this.x+52)&&
-            (self.game.bird.y<=242+this.y||self.game.bird.y+40>this.y+150+242)){
+            (self.game.bird.y<=242+this.y||self.game.bird.y+40>this.y+120+242)){
             self.hitAudio();
             self.game.gameOver=true;
             return true;
