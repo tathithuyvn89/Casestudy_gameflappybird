@@ -29,6 +29,7 @@ let Game = function () {
         this.pipe.init();
         this.listenMouse();
         this.run();
+        // this.reload();
     }
     this.listenMouse=function () {
         this.canvas.addEventListener("click",function () {
@@ -62,15 +63,17 @@ let Game = function () {
             self.context.drawImage(img,-50,250);
         }
     };
-    // this.gameClear = function () {
-    //     self.context.clearRect(0, 0, 288, 512);
-    // };
-    // this.gameStart=function () {
-    //     document.getElementById("startGame").style.display = "none";
-    //    let ctx=document.getElementById('before')
-    //     ctx.focus();
-    // }
+    this.clearGame=function () {
+        if (self.gameOver===true)
+        self.context.clearRect(0,0,288,512);
+    }
 }
      let game= new Game();
-     game.init();
-//  <button type="button" id="startGame" onclick="startGame()">START</button>
+     function play() {
+         if (!game.gameOver){
+         game.init();
+         } else{
+             document.location.reload();
+             clearInterval(game);
+         }
+     }

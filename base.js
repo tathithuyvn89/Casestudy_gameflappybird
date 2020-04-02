@@ -2,8 +2,10 @@ var Fg= function (game) {
     this.game=game;
     this.image=null;
     this.loaded=null;
+    this.width=118;
+    this.height=306;
     this.x=0;
-    this.y=512-118;
+    this.y=this.game.canvas.height-this.width;
     var self=this;
     this.init=function () {
         this.loadImage();

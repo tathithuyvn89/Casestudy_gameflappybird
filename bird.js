@@ -6,8 +6,10 @@ let Bird = function (game) {
     this.currentImage=null;
     this.currentImageIndex=0;
     this.currentFlame=0;
+    this.width=50;
+    this.height=40;
     this.x=100;
-    this.y=150;
+    this.y=30;
     this.speedY=0;
     this.gravity=1;
     this.direction="down";
@@ -41,17 +43,14 @@ this.update=function () {
     if (this.currentFlame%8===0){
         self.changeImage();
     }
-    if (this.y< 512-118-50) {
+    if (this.y< game.canvas.height-game.base.height-50) { //512-118-50
         if (this.direction){
             this.speedY+=this.gravity;
         } else {
             this.speedY-=this.gravity;
         }
         this.y+=this.speedY;
-        // if (this.y>512-118-50){
-        //     this.y=0;
-        // }
-        if (this.y>=512-118-50||this.y<=0 ){// bo dieu kien cham tren
+        if (this.y>=game.canvas.height||this.y<=0 ){// bo dieu kien cham tren -118-50
             self.game.gameOver=true;
             var die= new Audio();
             die.src="audio/sfx_die.wav";

@@ -1,4 +1,4 @@
-var Pipe = function (game) {
+let Pipe = function (game) {
     this.game=game;
     this.image=null;
     this.pipe1loaded=false;
@@ -6,6 +6,11 @@ var Pipe = function (game) {
     this.pipe1=null;
     this.pipe2=null;
     this.score=0;
+    this.pipe1Width=52;
+    this.pipe2Width=52;
+    this.pipe1Height=242;
+    this.pipe2Height=378;
+    this.pipe2L=null;
     this.x=300;
     this.y=0;
     var self=this;
@@ -25,7 +30,7 @@ var Pipe = function (game) {
         this.pipe2.src="img/pipeSouth.png";
     }
     this.update=function () {
-        var count=0;
+        let count=0;
         if (self.pipe1loaded===false||self.pipe1loaded===false){
             return;
         }
@@ -33,40 +38,41 @@ var Pipe = function (game) {
             return;
         }
         //lever 1
-        if (self.score<2){
+        if (self.score<5){
          this.x-=2;
-        if (this.x===-54){
-            this.x=300;
-            this.y=Math.floor(Math.random()*242)-242;
-        }
+             if (this.x===-54){
+             this.x=300;
+             this.y=Math.floor(Math.random()*this.pipe1Height)-this.pipe1Height;
+            }
         }
         //lever 2
-        if (self.score>=2){
+        if (self.score>=5){
             this.x-=3;
             if (this.x===-54){
                 this.x=300;
-                this.y=Math.floor(Math.random()*242)-242;
+                this.y=Math.floor(Math.random()*this.pipe1Height)-this.pipe1Height;
             }
         }
-
     }
     this.draw = function () {
+        const gap =100;
+        this. pipe2L=this.pipe1Height+ gap; //100 la khoang trong giua 2 ong
         if (self.pipe1loaded===false ||self.pipe1loaded===false){
             return;
         }
         self.game.context.drawImage(self.pipe1,this.x,this.y);
-        self.game.context.drawImage(self.pipe2,this.x,this.y+242+100);// 242 la chiều cao của ống trên, 200 là khoảng trống
+        self.game.context.drawImage(self.pipe2,this.x,this.y+this.pipe2L);
     }
     this.hitAudio=function () {
         if (game.gameOver===false){
-        var hit=new Audio();
+        let hit=new Audio();
         hit.src="audio/sfx_hit.wav";
         hit.play();
         }
     }
     this.hitPipe=function () {
-        if ((self.game.bird.x+50>=this.x&&self.game.bird.x<=this.x+52)&&
-            (self.game.bird.y<=242+this.y||self.game.bird.y+40>this.y+100+242)){
+        if ((self.game.bird.x+self.game.bird.width>=this.x&&self.game.bird.x<=this.x+this.pipe1Width)&&
+            (self.game.bird.y<=this.pipe1Height+this.y||self.game.bird.y+self.game.bird.height>this.y+this. pipe2L)){
             self.hitAudio();
             self.game.gameOver=true;
             return true;
@@ -74,7 +80,7 @@ var Pipe = function (game) {
     }
     this.pointAudio=function () {
         if (game.gameOver===false){
-            var point= new Audio();
+            let point= new Audio();
             point.src="audio/sfx_point.wav";
             point.play();
         }
@@ -85,8 +91,8 @@ var Pipe = function (game) {
             self.score++;
           this.pointAudio();
         }
-        var c= document.getElementById("before");
-        var context= c.getContext("2d");
+        let c= document.getElementById("before");
+        let context= c.getContext("2d");
        context.font="30px Arial";
         context.fillText("SCORE: "+ self.score,16,50);
         if (self.game.gameOver===true){
