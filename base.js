@@ -1,11 +1,11 @@
-var Fg= function (game) {
+let Fg= function (game) {
     this.game=game;
     this.image=null;
     this.loaded=null;
-    this.width=118;
-    this.height=306;
+    this.width=306;
+    this.height=118;
     this.x=0;
-    this.y=this.game.canvas.height-this.width;
+    this.y=this.game.canvas.height-this.height;
     var self=this;
     this.init=function () {
         this.loadImage();
@@ -25,7 +25,7 @@ var Fg= function (game) {
             return;
         }
         this.x-=3;
-        if (this.x===-306) {
+        if (this.x===-this.width) {
             this.x=0;
         }
     }
@@ -34,6 +34,6 @@ var Fg= function (game) {
             return;
         }
         self.game.context.drawImage(self.image,this.x,this.y+50);
-        self.game.context.drawImage(self.image,this.x+306,this.y+50);
+        self.game.context.drawImage(self.image,this.x+this.width,this.y+50);
     }
 }

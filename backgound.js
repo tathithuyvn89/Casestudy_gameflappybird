@@ -1,4 +1,4 @@
-var Bg = function (game) {
+let Bg = function (game) {
     this.game=game;
     this.image=null;
     this.loaded=false;

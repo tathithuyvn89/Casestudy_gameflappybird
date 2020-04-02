@@ -33,7 +33,7 @@ let Game = function () {
     }
     this.listenMouse=function () {
         this.canvas.addEventListener("click",function () {
-         self.bird.flap();
+            self.bird.flap();
         })
     }
     this.run= function () {
@@ -65,15 +65,15 @@ let Game = function () {
     };
     this.clearGame=function () {
         if (self.gameOver===true)
-        self.context.clearRect(0,0,288,512);
+            self.context.clearRect(0,0,288,512);
     }
 }
-     let game= new Game();
-     function play() {
-         if (!game.gameOver){
-         game.init();
-         } else{
-             document.location.reload();
-             clearInterval(game);
-         }
-     }
+let game= new Game();
+function play() {
+    if (!game.gameOver){
+        game.init();
+    } else{
+        document.location.reload();
+        clearInterval(game);
+    }
+}
