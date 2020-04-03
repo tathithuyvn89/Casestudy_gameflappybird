@@ -69,11 +69,18 @@ let Game = function () {
     }
 }
 let game= new Game();
+ let a= document.getElementById("guidegame")
+ console.log(a);
 function play() {
     if (!game.gameOver){
+        a.innerHTML="";
         game.init();
     } else{
         document.location.reload();
         clearInterval(game);
+        game.init();
     }
 }
+
+
+

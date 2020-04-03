@@ -5,7 +5,7 @@ let Bg = function (game) {
     this.width=288;
     this.height=512;
     this.x=0;
-    var self=this;
+    let self=this;
     this.init=function () {
         this.loadImage();
     }

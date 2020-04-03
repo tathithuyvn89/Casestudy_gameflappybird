@@ -72,7 +72,7 @@ let Pipe = function (game) {
     }
     this.hitPipe=function () {
         if ((self.game.bird.x+self.game.bird.width>=this.x&&self.game.bird.x<=this.x+this.pipe1Width)&&
-            (self.game.bird.y<=this.pipe1Height+this.y||self.game.bird.y+self.game.bird.height>this.y+this.pipe2L)){
+            (self.game.bird.y<=this.pipe1Height+this.y||self.game.bird.y+self.game.bird.height>=this.y+this.pipe2L)){
             self.hitAudio();
             self.game.gameOver=true;
             return true;
